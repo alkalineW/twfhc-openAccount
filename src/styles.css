@@ -1,0 +1,311 @@
+/* base style of tailwind */
+@tailwind base;
+/* component style of tailwind */
+@tailwind components;
+/* shared style of tailwind */
+@tailwind utilities;
+/* rwd style of tailwind */
+@tailwind screens;
+
+/* .key-visual-inner-wrap {
+  border: 1px solid #333;
+} */
+
+/* @font-face {
+  font-family: 'huninn';
+  src: url('../public/font/jf-openhuninn.ttf');
+} */
+
+@font-face {
+  font-family: 'funInn';
+  src: url('../public/font/FakePearl-Regular.woff2') format('woff2'),
+    url('../public/font/FakePearl-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'funInn';
+  src: url('../public/font/FakePearl-SemiBold.woff2') format('woff2'),
+    url('../public/font/FakePearl-SemiBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'funInn';
+  src: url('../public/font/FakePearl-Light.woff2') format('woff2'),
+    url('../public/font/FakePearl-Light.woff') format('woff');
+  font-weight: light;
+  font-style: normal;
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+.deco-col:nth-of-type(6):before {
+  content: none;
+}
+
+.deco-col:nth-of-type(12):before {
+  content: none;
+}
+
+.deco-col:nth-of-type(16):before {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: url('../public/img/pageItem/apply-check.png');
+  right: -15px;
+  bottom: 15%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.deco-col:nth-of-type(17):before {
+  content: none;
+}
+
+@media (min-width: 768px) {
+  .deco-col:nth-of-type(6):before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 187px;
+    background: url('../public/img/pageItem/apply-bg-phone.png');
+    right: -30%;
+    bottom: -8%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .deco-col:nth-of-type(12):before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 176px;
+    background: url('../public/img/pageItem/apply-bg-card.png');
+    left: -35%;
+    bottom: 45%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .deco-col:nth-of-type(16):before {
+    width: 100px;
+    height: 100px;
+    right: -45px;
+    bottom: 5%;
+  }
+  .deco-col:nth-of-type(17):before {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    background: url('../public/img/pageItem/apply-bg-mail.png');
+    right: -18%;
+    top: -25%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.list-decimal li:before {
+  content: '*';
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 10px;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .list-decimal li:before {
+    left: -38px;
+    top: 6px;
+    width: 40px;
+    height: 30px;
+  }
+}
+
+.tab-btn.shadow-btn.active {
+  background-color: #e63e1e;
+}
+
+.tab-btn.shadow-btn {
+  background-color: #ee7963;
+}
+
+/* shadow btn */
+.shadow-btn {
+  transition: all ease 0.3s;
+}
+.shadow-btn:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 9px;
+  background-color: #333333;
+  z-index: -1;
+  border-radius: 999px;
+  transition: all ease 0.3s;
+}
+
+.shadow-btn:hover {
+  top: 5px;
+}
+.shadow-btn:hover::before {
+  transform: translateY(-2px);
+}
+
+.track-line-wrap::before,
+.track-line-wrap::after {
+  content: '';
+  width: 100%;
+  height: 12px;
+  position: absolute;
+  left: 0;
+}
+
+.track-line-wrap::before {
+  background: url('../public/img/pageItem/track-divider-top.svg');
+  top: -40px;
+}
+
+.track-line-wrap::after {
+  background: url('../public/img/pageItem/track-divider.svg');
+  bottom: -15px;
+}
+
+/* dialog style */
+.dialog-wrap::before,
+.dialog-wrap::after {
+  content: '';
+  width: calc(100% + 10px);
+  left: -5px;
+  position: absolute;
+}
+.dialog-wrap::before {
+  background-image: url('../public/img/pageItem/qa-dialog-head.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: -30px;
+  height: 30px;
+}
+.dialog-wrap::after {
+  background-image: url('../public/img/pageItem/qa-dialog-bottom.svg');
+  background-size: cover;
+  bottom: -84px;
+  height: 84px;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 640px) {
+  .dialog-wrap::before {
+    top: -50px;
+    height: 50px;
+  }
+  .dialog-wrap::after {
+    /* bottom: -40px; */
+    /* height: 40px; */
+  }
+}
+
+@media (min-width: 1024px) {
+  .dialog-wrap::after,
+  .dialog-wrap::before {
+    content: none;
+  }
+}
+
+/* branch area style */
+.branch-col:before,
+.branch-col:after {
+  content: '';
+  width: 2px;
+  height: 40px;
+  top: 46px;
+  position: absolute;
+  background: #333333;
+  z-index: -1;
+}
+
+.branch-col:before {
+  left: 40px;
+}
+
+.branch-col:after {
+  left: 150px;
+}
+
+.branch-col-title::before {
+  content: '';
+  width: 100%;
+  height: calc(100% + 4px);
+  left: 8px;
+  border-radius: 0.8rem;
+  border: 2px solid #333333;
+  background-color: #7c4b43;
+  position: absolute;
+  top: -2px;
+  z-index: -1;
+}
+
+@media (min-width: 1024px) {
+  .branch-col:before {
+    left: calc(50% - 145px);
+  }
+  .branch-col:after {
+    left: calc(50% - 30px);
+  }
+}
+
+/* news & qa page list styles */
+.numeric-list::before,
+.q-list:before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  left: -32px;
+  position: absolute;
+}
+
+@media (min-width: 1024px) {
+  .numeric-list::before,
+  .q-list:before {
+    left: -48px;
+    top: 2px;
+    width: 45px;
+    height: 45px;
+  }
+}
+/* 
+.numeric-list:first-of-type:before {
+  background: url('../public/img/pageItem/num1.svg');
+  background-size: contain;
+}
+
+.numeric-list:nth-of-type(2):before {
+  background: url('../public/img/pageItem/num2.svg');
+  background-size: contain;
+}
+
+.numeric-list:nth-of-type(3):before {
+  background: url('../public/img/pageItem/num3.svg');
+  background-size: contain;
+}
+
+.numeric-list:nth-of-type(4):before {
+  background: url('../public/img/pageItem/num4.svg');
+  background-size: contain;
+}
+
+.numeric-list:nth-of-type(5):before {
+  background: url('../public/img/pageItem/num5.svg');
+  background-size: contain;
+}
+
+.numeric-list:nth-of-type(6):before {
+  background: url('../public/img/pageItem/num6.svg');
+  background-size: contain;
+} */
