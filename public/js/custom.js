@@ -228,9 +228,7 @@ $(function () {
     function (direction) {
       if (direction === 'down') {
         animateStagger();
-        // $(this.element).animate({ opacity: 1 });
       } else {
-        // $(this.element).animate({ opacity: 0 });
       }
     },
     {
@@ -275,7 +273,6 @@ $(function () {
       toggleClass(toggleContent, 'hidden', false);
     }
     unactiveBtn.classList.remove('active');
-    // this.removeEventListener('click', tabHandle);
   }
 
   function toggleClass(elm, className, status) {
