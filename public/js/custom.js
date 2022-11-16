@@ -210,18 +210,20 @@ $(function () {
   let currentIdx = 0;
 
   function animateStagger() {
-    let elm = document.getElementById('staggered-wrap').children;
+    const elm = document.getElementById('staggered-wrap').children;
     let elmIdx = elm.length;
     nIntervId = setInterval(showStagger.bind(null, elm, elmIdx), 400);
   }
 
   function showStagger(elm, elmIdx) {
-    if (currentIdx == elmIdx) {
+    if (currentIdx >= elmIdx) {
+      console.log('stop setInterval');
       clearInterval(nIntervId);
     } else {
       elm[currentIdx].classList.remove('opacity-5');
     }
     currentIdx += 1;
+    console.log(currentIdx);
   }
 
   $('#staggered-wrap').waypoint(
